@@ -5,7 +5,7 @@ Easily create zip files containing tinc configuration for clients to easily conn
 install flask
 >pip3 install flask
 
-Make sure you have a currently working setup. See how 'externalnyc' is configured [here](https://www.digitalocean.com/community/tutorials/how-to-install-tinc-and-set-up-a-basic-vpn-on-ubuntu-14-04)
+Make sure you have a currently working setup. See how 'externalnyc' is configured. [here](https://www.digitalocean.com/community/tutorials/how-to-install-tinc-and-set-up-a-basic-vpn-on-ubuntu-14-04)
 This tool will run on your public ip node (as configured in the digitalocean article).
 
 ##Running the application
@@ -13,6 +13,6 @@ This tool will run on your public ip node (as configured in the digitalocean art
 
 ##Todo
 * Allow user to use only public key
-* Handle more than 
+* Handle more than 254 clients
 
 
