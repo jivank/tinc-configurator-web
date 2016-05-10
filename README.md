@@ -1,5 +1,6 @@
 # tinc-configurator-web
 Easily create zip files containing tinc configuration for clients to easily connect.
+Note: This will generate the public/private key for the client.
 
 ##Prerequsites
 install flask
@@ -9,6 +10,7 @@ Make sure you have a currently working setup. See how 'externalnyc' is configure
 This tool will run on your public ip node (as configured in the digitalocean article).
 
 ##Running the application
+Be sure to run as a user that has read/write permissions to /etc/tinc or wherever your tinc folder resides.
 >python3 tinczip.py
 
 ##Todo
