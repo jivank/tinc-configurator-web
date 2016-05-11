@@ -72,9 +72,7 @@ def process(network, name, os_):
     os.mkdir(tmp_dir)
     os.mkdir(tmp_hosts_dir)
     assigned_ip = find_free_ip(network)
-    tinc_conf = '''Name = {name}
-                ConnectTo = {host}
-                '''
+    tinc_conf = '''Name = {name}\nConnectTo = {host}'''.format(name=name,host=get_hostname(network))
     host_conf = '''Subnet = {}/32'''.format(assigned_ip)
 
     if os_ == 'windows':
@@ -89,7 +87,7 @@ def process(network, name, os_):
     with open(os.path.join(tmp_hosts_dir, name), 'w') as host_conf_file:
         host_conf_file.write(host_conf)
 
-    subprocess.check_output('tincd -n {} -K4096 | </dev/null'.format(tmp_network),shell=True)
+    subprocess.check_output('tincd -n {} -K4096'.format(tmp_network).split())
 
 
     #copy client key to server folder
@@ -166,4 +164,4 @@ def root():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)
